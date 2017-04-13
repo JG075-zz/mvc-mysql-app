@@ -1,15 +1,18 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('User', {
+  var Band = sequelize.define('Band', {
     name: DataTypes.STRING,
-    email: DataTypes.STRING
+    description: DataTypes.STRING,
+    album: DataTypes.STRING,
+    year: DataTypes.STRING,
+    UserId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        User.hasMany(models.Band);
+        Band.belongsTo(models.User);
       }
     }
   });
-  return User;
+  return Band;
 };
