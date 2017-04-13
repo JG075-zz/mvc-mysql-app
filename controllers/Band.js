@@ -19,7 +19,7 @@ exports.list = function(req, res) {
   }).then(function(bands) {
     // res.json(bands)
     // Render result
-    res.render('list', {
+    res.render('band-list', {
       title: 'List bands',
       bands: bands
     });
